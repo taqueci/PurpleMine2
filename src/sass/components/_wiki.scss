@@ -211,9 +211,10 @@ div.wiki {
     border-radius: $border-radius-base;
     border-color: rgba(#000, .068);
     background-color: rgba(#000, .03);
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: auto;
     font-size: $font-size-small;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 
     code {
       padding: 0;
