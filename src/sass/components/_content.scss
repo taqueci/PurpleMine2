@@ -86,8 +86,7 @@
 
     @if $sidebar-position == "left" {
       margin-right: -($sidebar-padding-horizontal);
-    }
-    @else {
+    } @else {
       margin-left: -($sidebar-padding-horizontal);
     }
   }
@@ -134,15 +133,17 @@
       }
     }
 
+    // Tell me if you have a good solution...
     @if $sidebar-position == "right" {
       /* Activity */
       > input {
-        margin: 0 (5px - $sidebar-padding-horizontal) 0 $sidebar-padding-horizontal;
+        margin-right: (5px - $sidebar-padding-horizontal);
+        margin-left: $sidebar-padding-horizontal;
       }
 
       /* Roadmap */
       > label {
-        padding: 0 5px 0 $sidebar-padding-horizontal;
+        padding-left: $sidebar-padding-horizontal;
       }
     }
   }
