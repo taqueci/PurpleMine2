@@ -13,6 +13,29 @@
     word-wrap: break-word;
 
     @if $use-gravatars {
+      // For Redmine 3.4+
+      .gravatar-with-child {
+        position: relative;
+
+        > img.gravatar {
+          width: $issue-gravatar-size;
+          height: $issue-gravatar-size;
+          margin-right: 10px;
+          margin-bottom: $line-height-computed / 2;
+          float: left;
+
+          &:nth-child(2) {
+            width: $issue-gravatar-size * 0.5;
+            height: $issue-gravatar-size * 0.5;
+            position: absolute;
+            top: $issue-gravatar-size * 0.6;
+            left: $issue-gravatar-size * 0.6;
+            border-radius: 20%;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+          }
+        }
+      }
+
       > img.gravatar {
         width: $issue-gravatar-size;
         height: $issue-gravatar-size;
@@ -29,7 +52,7 @@
 
       > .subject,
       > .author {
-        padding-left: $issue-gravatar-size + 10px;
+        padding-left: $issue-gravatar-size * 1.1 + 10px;
       }
     }
 
@@ -385,7 +408,7 @@ div.thumbnails {
     }
   }
 
-  h4 {
+  > div > h4 {
     margin: 0;
     padding: $bubble-padding-vertical $bubble-padding-horizontal;
     border-radius: $panel-border-radius $panel-border-radius 0 0;
@@ -407,7 +430,7 @@ div.thumbnails {
   }
 
   @if $use-gravatars {
-    h4 {
+    > div > h4 {
       position: relative;
 
       &::before,
