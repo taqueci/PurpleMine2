@@ -152,6 +152,6 @@ blockquote {
   @extend %clearfix;
 }
 
-a[href*="activity"][title*=":"]:before {
+a[href*="activity"][title*=":"]::before {
   content: " [" attr(title) "] ";
 }
