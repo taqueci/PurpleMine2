@@ -96,7 +96,7 @@
     padding: 0;
     list-style-type: none;
 
-    > a {
+    > a:not(.icon-only) {
       display: block;
       padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
       border: 1px solid transparent;
@@ -135,13 +135,13 @@
 
     // Tell me if you have a good solution...
     @if $sidebar-position == "right" {
-      /* Activity */
+      // Activity
       > input {
         margin-right: (5px - $sidebar-padding-horizontal);
         margin-left: $sidebar-padding-horizontal;
       }
 
-      /* Roadmap */
+      // Roadmap
       > label {
         padding-left: $sidebar-padding-horizontal;
       }

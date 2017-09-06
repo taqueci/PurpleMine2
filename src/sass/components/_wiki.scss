@@ -3,13 +3,6 @@
   font-size: $wiki-font-size;
 
   @if $wiki-page-more-vertical-space {
-    // Anchors will make headers more separated,
-    // and it will look better when you open page with hash in URL
-    a[name]:empty {
-      display: block;
-      overflow: hidden;
-    }
-
     // Add some space between list items
     ul,
     ol {
@@ -213,10 +206,9 @@ div.wiki {
     border-radius: $border-radius-base;
     border-color: rgba(#000, .068);
     background-color: rgba(#000, .03);
-    overflow: auto;
     font-size: $font-size-small;
-    white-space: pre-wrap;
     word-wrap: break-word;
+    white-space: pre-wrap;
 
     code {
       padding: 0;
