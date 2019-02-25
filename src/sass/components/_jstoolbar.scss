@@ -29,8 +29,16 @@
             align-self: flex-end;
           }
 
-          .selected {
-            border-color: $input-border $input-border $tab-active-bg;
+          margin-bottom: 5px;
+
+          a.selected {
+            border: 1px solid $tab-active-border;
+            border-radius: $border-radius-base;
+          }
+
+          a:not(.selected):hover {
+            border: 1px solid transparent;
+            border-radius: $border-radius-base;
           }
         }
 
