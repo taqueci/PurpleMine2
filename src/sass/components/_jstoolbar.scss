@@ -17,6 +17,10 @@
       height: auto;
 
       li {
+        @if $flexbox-layout {
+          align-self: flex-end;
+        }
+
         height: auto;
         margin: 0;
 
@@ -25,11 +29,8 @@
         }
 
         &:not(.tab-elements) {
-          @if $flexbox-layout {
-            align-self: flex-end;
-          }
-
           margin-bottom: 5px;
+          margin-right: 4px;
 
           a.selected {
             border: 1px solid $tab-active-border;
@@ -40,10 +41,6 @@
             border: 1px solid transparent;
             border-radius: $border-radius-base;
           }
-        }
-
-        &.tab-elements {
-          margin-left: 5px;
         }
       }
     }
