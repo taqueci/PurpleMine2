@@ -67,14 +67,15 @@
   }
 
   ul {
+    @include clearfix;
     margin: 0;
     padding: 0;
   }
 
   li {
-    display: inline;
-    margin: 0 .85em 0 0;
+    margin: 0 .5em 0 0;
     padding: 0;
+    float: left;
     list-style-type: none;
     white-space: nowrap;
   }
@@ -158,10 +159,12 @@
 }
 
 #quick-search {
-  margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
-  margin-right: $header-padding-horizontal;
-  float: right;
-  color: $header-text;
+  #header & {
+    margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
+    margin-right: $header-padding-horizontal;
+    float: right;
+    color: $header-text;
+  }
 
   > * {
     vertical-align: top;
@@ -169,10 +172,10 @@
 
   form {
     display: inline-block;
-  }
 
-  input {
-    width: $quick-search-width;
+    input {
+      width: $quick-search-width;
+    }
   }
 
   > form > input,
