@@ -217,10 +217,7 @@ a.collapsible.collapsed,
       }
 
       img.gravatar {
-        position: relative;
-        top: 1px;
         margin-right: .5em;
-        vertical-align: top;
       }
     }
   }
@@ -852,6 +849,8 @@ div.table-list.boards {
 
 .news-article {
   margin-bottom: $line-height-computed;
+  padding-top: $line-height-computed;
+  border-top: 1px solid $panel-border;
 
   header {
     h3 {
@@ -864,8 +863,12 @@ div.table-list.boards {
   }
 }
 
-.author .user {
-  font-weight: $font-weight-bold;
+.author {
+  color: $gray-700;
+
+  .user {
+    font-weight: $font-weight-bold;
+  }
 }
 
 
