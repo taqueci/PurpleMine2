@@ -7,6 +7,7 @@
 //
 
 $fixed-layout:                  false !default;
+$css-grid-layout:               false !default;
 $flexbox-layout:                true !default;
 $sidebar-position:              right !default;
 $clean-issues:                  true !default;
@@ -142,9 +143,9 @@ $font-size-small-px:            floor($font-size-small-unitless * $font-size-bas
 $font-size-h1:                  2.25em !default;
 $font-size-h2:                  1.75em !default;
 $font-size-h3:                  1.5em !default;
-$font-size-h4:                  1.286em !default;
-$font-size-h5:                  1em !default;
-$font-size-h6:                  1em !default;
+$font-size-h4:                  1.25em !default;
+$font-size-h5:                  1.125em !default;
+$font-size-h6:                  1.0625em !default;
 
 $line-height-base:              1.428571429 !default; // 20/14
 $line-height-large:             1.33 !default;
@@ -589,7 +590,7 @@ $flash-error-link:              $white !default;
 //
 
 $progress-height:               12px !default;
-$progress-bg:                   $gray-300 !default;
+$progress-bg:                   rgba($gray-500, .5) !default;
 $progress-bar-bg:               $brand-primary !default;
 $progress-bar-success-bg:       $brand-success !default;
 $progress-bar-danger-bg:        $brand-danger !default;
