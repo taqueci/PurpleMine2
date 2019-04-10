@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v2.2.0 (2019-04-09):
+
+* Fixed #101, #102: tooltip positioning
+
 v2.1.1 (2019-03-23):
 
 * Fixed sidebar toggler style when fixed layout is enabled
