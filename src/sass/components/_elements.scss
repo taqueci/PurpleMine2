@@ -98,12 +98,14 @@ a.collapsible.collapsed,
 //
 
 .hidden-for-sighted {
-  position: absolute;
-  top: auto;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  // stylelint-disable declaration-no-important
+  position: absolute !important;
+  top: auto !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  // stylelint-enable declaration-no-important
 }
 
 
@@ -563,11 +565,21 @@ ul.projects {
 //
 
 div#roadmap {
+  article {
+    margin-bottom: $line-height-computed;
+  }
+
   .related-issues {
     margin-bottom: $line-height-computed;
 
     td.checkbox {
       display: none;
+    }
+
+    td.assigned_to {
+      width: 1px;
+      padding-right: 0;
+      white-space: nowrap;
     }
   }
 
@@ -580,6 +592,12 @@ div#roadmap {
       position: relative;
       top: 0;
     }
+  }
+
+  h2,
+  h3 {
+    display: inline;
+    padding-right: 0;
   }
 
   .wiki {
