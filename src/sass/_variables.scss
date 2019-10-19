@@ -16,7 +16,7 @@ $color-trackers:                true !default;
 $color-status:                  true !default;
 $priority-icon:                 true !default;
 $use-gravatars:                 true !default;
-$use-logo:                      false !default;
+$use-logo:                      true !default;
 $use-retina-logo:               false !default;
 $use-project-tiles:             true !default;
 $issue-subject-large:           true !default;
@@ -497,11 +497,11 @@ $quick-search-box-width:        300px !default;
 $quick-search-dropdown-bg:      $body-bg !default;
 $quick-search-dropdown-border:  $gray-400 !default;
 
-$logo-image-width:              60px !default;
+$logo-image-width:              40px !default;
 $logo-image-height:             40px !default;
-$logo-position-horizontal:      $header-padding-vertical !default;
+$logo-position-horizontal:      $padding-side !default;
 $logo-position-vertical:        center !default;
-$logo-space:                    floor($header-padding-vertical / 2) !default;
+$logo-space:                    floor($padding-side / 2) !default;
 
 $main-menu-bg:                  $gray-100 !default;
 $main-menu-bg-hover:            $gray-100 !default;
