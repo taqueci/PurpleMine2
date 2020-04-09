@@ -56,6 +56,30 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v2.10.2 (2020-04-09):
+
+* Fixed #175: couldn't edit note when it's URL target.
+* Improved styling of some inline edit forms.
+
+v2.10.1 (2020-04-06):
+
+* Fixed #160: highlight color in jQuery UI menu, most notably in checklist plugin.
+
+v2.10.0 (2020-04-05):
+
+* Fixed #172 Collapsed/expended icons for completed versions.
+* Fixed #171 "Display" label in Gantt option.
+* Fixed #170 radio buttons in projects options.
+* Fixed #169 styles in the spent time tab.
+* Fixed #164: apply responsive overrides more generally
+* Fixed #159: wrapping long text in issue attributes.
+* Fixed #150: styling for query totals and expander in Agile plugin.
+* Fixed #148: full screen view for Dashboard plugin.
+* Fixed a "timeline" positioning in issue notes/changes.
+* Changed lightness of shades 50 and 950.
+* Changed loader styles.
+* Changed rouge syntax highlighter color scheme.
+
 v2.9.1 (2020-02-22):
 
 * Merged fix #155: $.load function removed from jQuery.

@@ -144,6 +144,21 @@ p.buttons,
 }
 
 
+//== Submit + cancel
+//
+
+#issue-form,
+.journal,
+.edit_news,
+.edit_content,
+.edit_time_entry,
+.edit_membership {
+  input[type="submit"] + a {
+    margin-left: ceil($btn-padding-horizontal-small / 2);
+  }
+}
+
+
 //== Action buttons group
 //
 
@@ -185,6 +200,10 @@ p.buttons {
   select {
     width: auto !important; // stylelint-disable-line declaration-no-important
     min-width: 130px;
+  }
+
+  label + & {
+    margin-left: $padding-side;
   }
 
   @at-root span#{&} {
