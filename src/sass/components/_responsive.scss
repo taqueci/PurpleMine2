@@ -4,7 +4,7 @@
 }
 
 // stylelint-disable selector-max-compound-selectors
-.theme-Purplemine2 {
+body {
   @media screen and (max-width: $redmine-responsive-max) {
     .flyout-menu + div {
       #header {
@@ -81,6 +81,11 @@
 
     #content {
       overflow: auto;
+    }
+
+    #ajax-indicator {
+      left: 50%;
+      width: 200px;
     }
 
     .mobile-toggle-button {
@@ -412,7 +417,7 @@
       }
     }
 
-    #issue-changesets {
+    div#issue-changesets {
       div.changeset {
         padding: 0;
       }

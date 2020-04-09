@@ -29,6 +29,12 @@ table.list {
     color: $gray-700;
     vertical-align: bottom;
 
+    @if $table-list-header-bg == $body-bg {
+      @at-root .box & {
+        background-color: $panel-bg;
+      }
+    }
+
     a {
       color: $gray-900;
     }
@@ -79,6 +85,10 @@ table.list {
       width: 15px;
       padding-right: $table-cell-padding;
       padding-left: $table-cell-padding;
+
+      &:first-child {
+        padding-right: 0;
+      }
 
       input {
         margin: 2px 0 0;
@@ -255,7 +265,7 @@ tr.issue {
 }
 
 tr {
-  span.expander {
+  span.expander:not(.icon) {
     margin-left: 0;
     padding-left: 8px;
     background-image: inline-svg("plus.svg", (path: (fill: $btn-default-icon-color)));
@@ -265,7 +275,7 @@ tr {
     user-select: none;
   }
 
-  &.open span.expander {
+  &.open span.expander:not(.icon) {
     background-image: inline-svg("minus.svg", (path: (fill: $btn-default-icon-color)));
   }
 }
@@ -682,6 +692,15 @@ table.list.enumerations {
 //
 
 .query-totals {
+  #content & {
+    margin-top: 0;
+
+    @media screen and (min-width: $redmine-responsive-min) {
+      margin-top: -($line-height-computed * 2 + $btn-padding-vertical);
+      text-align: right;
+    }
+  }
+
   > span {
     margin-right: $padding-base-horizontal;
 
