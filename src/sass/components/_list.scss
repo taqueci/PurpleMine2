@@ -52,7 +52,7 @@ table.list {
     vertical-align: top;
 
     &.icon {
-      padding-left: $table-cell-padding + 20px;
+      padding-left: $table-cell-padding + $icon-width;
     }
 
     &.id,
@@ -86,8 +86,10 @@ table.list {
       padding-right: $table-cell-padding;
       padding-left: $table-cell-padding;
 
-      &:first-child {
-        padding-right: 0;
+      @if (parse-length($table-list-item-border, right) == 0) {
+        &:first-child {
+          padding-right: 0;
+        }
       }
 
       input {
@@ -137,10 +139,10 @@ table.list {
       white-space: nowrap;
 
       a {
-        padding-right: 5px;
+        margin-right: $padding-small-vertical;
 
         &.icon-only {
-          padding: 0;
+          margin-right: 0;
         }
       }
 
@@ -265,14 +267,31 @@ tr.issue {
 }
 
 tr {
-  span.expander:not(.icon) {
-    margin-left: 0;
-    padding-left: 8px;
-    background-image: inline-svg("plus.svg", (path: (fill: $btn-default-icon-color)));
-    background-repeat: no-repeat;
-    background-position: center center;
-    cursor: pointer;
-    user-select: none;
+  span.expander {
+    display: inline-block;
+    padding: 0;
+    float: left;
+
+    &.icon {
+      padding-left: 18px;
+      text-align: center;
+
+      &::before {
+        margin: 0 0 0 -18px;
+        color: $gray-600;
+        font-size: 12px;
+      }
+    }
+
+    &:not(.icon) {
+      width: 18px;
+      padding: 0;
+      background-image: inline-svg("plus.svg", (path: (fill: $btn-default-icon-color)));
+      background-repeat: no-repeat;
+      background-position: center center;
+      cursor: pointer;
+      user-select: none;
+    }
   }
 
   &.open span.expander:not(.icon) {
@@ -345,13 +364,13 @@ tr.entry {
   &.file td {
     &.filename a,
     &.filename_no_report a {
-      margin-left: 16px;
+      margin-left: 18px;
     }
   }
 }
 
 @if $table-list-color-odd-rows {
-  table.list:not(.odd-even) tbody tr:nth-child(odd),
+  table.list:not(.odd-even) tbody tr:nth-child(odd):not(.ui-sortable-helper),
   .odd {
     > td {
       background-color: $table-bg-accent;
@@ -360,7 +379,7 @@ tr.entry {
 }
 
 @if $table-list-color-even-rows {
-  table.list:not(.odd-even) tbody tr:nth-child(even),
+  table.list:not(.odd-even) tbody tr:nth-child(even):not(.ui-sortable-helper),
   .even {
     > td {
       background-color: $table-bg-accent;
@@ -369,8 +388,16 @@ tr.entry {
 }
 
 @if $table-list-highlight-rows {
-  table.list > tbody > tr:nth-child(n):hover {
+  table.list > tbody > tr:nth-child(n):hover:not(.ui-sortable-helper) {
     background-color: $table-bg-hover;
+
+    @if $color-priorities {
+      @each $priority-id, $priority-color in $priority-color-map {
+        &.priority-#{$priority-id} {
+          background-color: rgba(map-get($priority-color, background), $table-color-hover-factor);
+        }
+      }
+    }
   }
 }
 
@@ -391,6 +418,29 @@ tr.entry {
       map-get($priority-icon, color),
       map-get($priority-icon, icon)
     );
+  }
+}
+
+@if $color-priorities {
+  @each $priority-id, $priority-color in $priority-color-map {
+    tr.priority-#{$priority-id} {
+      &.odd td {
+        background-color: rgba(map-get($priority-color, background), $table-color-odd-factor);
+      }
+
+      &.even td {
+        background-color: rgba(map-get($priority-color, background), $table-color-even-factor);
+      }
+
+      td {
+        border-color: map-get($priority-color, border);
+        color: map-get($priority-color, color);
+      }
+
+      a {
+        color: map-get($priority-color, link);
+      }
+    }
   }
 }
 
@@ -649,7 +699,7 @@ table.files {
 
   tr.file td {
     &.filename {
-      padding-left: 20px + $table-cell-padding;
+      padding-left: $icon-width + $table-cell-padding;
       text-align: left;
     }
 
