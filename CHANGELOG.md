@@ -1,3 +1,8 @@
+v2.15.0 (2021-05-23):
+
+* Updated styles for Redmine 4.2.
+* Merged #225 (via #228): improved documents styles.
+
 v2.14.0 (2021-01-27):
 
 * Merged #220: fixed drag & drop behavior.
